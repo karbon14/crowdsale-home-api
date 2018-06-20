@@ -1,6 +1,9 @@
 {
   "name": "karbon14-home-api",
   "version": "1.0.0",
+  "engines": {
+    "node": "9.11.1"
+  },
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
