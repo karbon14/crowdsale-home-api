@@ -9,7 +9,6 @@ before_script:
   - sudo docker-compose -f ./docker/docker-compose.yml up -d
 script:
   - npm run lint
-  - npm run build
   - npm run start:ci
   - npm run test
 after_script:
@@ -20,5 +19,4 @@ deploy:
   api_key: 
     secure: $HEROKU_API_KEY
   run:
-    - npm run build
     - npm run start

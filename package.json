@@ -16,7 +16,8 @@
     "coverage": "jest --coverage",
     "lint": "eslint -f table src test",
     "lint:fix": "eslint --fix -f table src test",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "postinstall": "npm run build"
   },
   "lint-staged": {
     "*.js": [
