@@ -14,3 +14,9 @@ script:
   - npm run test
 after_script:
   - greenkeeper-lockfile-upload
+deploy:
+  provider: heroku
+  api_key: 
+    secure: $HEROKU_API_KEY
+  run:
+    - npm run start
