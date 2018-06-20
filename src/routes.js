@@ -4,7 +4,7 @@ import { validateSchema } from './middleware/validateSchema/validateSchema'
 import { configuration } from './configuration/configuration'
 
 import { SendEmail } from './modules/SendEmail/SendEmail'
-import { Transporter } from './modules/transporter/transporter'
+import { Transporter } from './modules/Transporter/Transporter'
 import { AddEmailList } from './modules/AddEmailList/AddEmailList'
 
 const transporter = Transporter(configuration)
