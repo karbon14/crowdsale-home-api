@@ -18,5 +18,3 @@ deploy:
   app: karbon14-home-api
   api_key: 
     secure: $HEROKU_API_KEY
-  run:
-    - npm run start
