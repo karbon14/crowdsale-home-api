@@ -2,7 +2,7 @@
   "name": "karbon14-home-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist --copy-files",
     "start": "./node_modules/.bin/forever start ./dist",

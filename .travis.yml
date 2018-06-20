@@ -20,4 +20,5 @@ deploy:
   api_key: 
     secure: $HEROKU_API_KEY
   run:
+    - npm run build
     - npm run start
