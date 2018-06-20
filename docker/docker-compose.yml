@@ -1,0 +1,9 @@
+version: '2'
+services:
+  maildev:
+    image: "djfarrelly/maildev"
+    container_name: "maildev"
+    ports:
+      - "1025:1025"
+      - "1080:1080"
+    command: bin/maildev --web 1080 --smtp 1025

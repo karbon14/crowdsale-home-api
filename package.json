@@ -1,0 +1,65 @@
+{
+  "name": "karbon14-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist --copy-files",
+    "start": "node -r dotenv/config ./dist",
+    "start:ci": "NODE_ENV=development node -r dotenv/config ./dist",
+    "start:dev": "npm run docker && NODE_ENV=development nodemon --exec npm run babel-node",
+    "docker": "docker-compose -f docker/docker-compose.yml up -d ",
+    "babel-node": "babel-node --require node_modules/dotenv/config -- ./src/index.js ",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "NODE_ENV=test jest ./src",
+    "test:e2e": "NODE_ENV=test jest ./test",
+    "coverage": "jest --coverage",
+    "lint": "eslint -f table src test",
+    "lint:fix": "eslint --fix -f table src test",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karbon14/home-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karbon14/home-api/issues"
+  },
+  "homepage": "https://github.com/karbon14/home-api#readme",
+  "dependencies": {
+    "bunyan": "1.8.12",
+    "dotenv": "5.0.1",
+    "joi": "13.3.0",
+    "koa": "2.5.1",
+    "koa-body": "2.5.0",
+    "koa-bodyparser": "4.2.0",
+    "koa-router": "7.4.0",
+    "mailchimp-api-v3": "1.8.1",
+    "nodemailer": "4.6.4",
+    "nodemailer-sendgrid-transport": "0.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.0.0-beta.49",
+    "@babel/core": "7.0.0-beta.49",
+    "@babel/node": "7.0.0-beta.49",
+    "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.49",
+    "@babel/preset-env": "7.0.0-beta.49",
+    "babel-core": "7.0.0-bridge.0",
+    "eslint": "4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "0.14.3",
+    "jest": "23.1.0",
+    "lint-staged": "7.2.0",
+    "nodemon": "1.17.5",
+    "prettier": "1.13.5",
+    "supertest": "3.1.0"
+  }
+}
