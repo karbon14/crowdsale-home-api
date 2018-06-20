@@ -8,7 +8,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist --copy-files",
-    "start": "./node_modules/.bin/forever start ./dist",
+    "start": "node ./dist/index.js",
     "start:ci": "NODE_ENV=development forever start ./dist",
     "start:dev": "npm run docker && NODE_ENV=development nodemon --exec npm run babel-node",
     "docker": "docker-compose -f docker/docker-compose.yml up -d ",
