@@ -16,6 +16,7 @@ after_script:
   - greenkeeper-lockfile-upload
 deploy:
   provider: heroku
+  app: karbon14-home-api
   api_key: 
     secure: $HEROKU_API_KEY
   run:
