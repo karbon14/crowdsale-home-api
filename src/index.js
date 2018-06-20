@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '.env' })
 import Koa from 'koa'
 import { router } from './routes'
 import bodyParser from 'koa-bodyparser'
