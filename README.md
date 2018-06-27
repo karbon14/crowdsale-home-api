@@ -1,8 +1,6 @@
 
 # Karbon14 home API
-<p>
-  [![Build Status](https://travis-ci.org/karbon14/home-api.svg?branch=master)](https://travis-ci.org/karbon14/home-api)
-</p>
+[![Build Status](https://travis-ci.org/karbon14/home-api.svg?branch=master)](https://travis-ci.org/karbon14/home-api)
 This API exposes the following services:
 
 - Download a file.
