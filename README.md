@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://travis-ci.org/karbon14/home-api"><img alt="Travis Status" src="https://img.shields.io/travis/karbon14/home-api/master.svg?label=travis&maxAge=43200"></a>
+</p>
+
 # Karbon14 home API
 This API exposes the following services:
 
