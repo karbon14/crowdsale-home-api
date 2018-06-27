@@ -4,10 +4,12 @@ services:
   - docker
 before_install:
   - npm install -g greenkeeper-lockfile@1
+  - npm install -g codecov
 before_script:
   - greenkeeper-lockfile-update
   - sudo docker-compose -f ./docker/docker-compose.yml up -d
 script:
+  - codecov
   - npm run lint
   - npm run start:ci
   - npm run test
