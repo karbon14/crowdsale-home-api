@@ -1,6 +1,7 @@
 
 # Karbon14 home API
 [![travis](https://img.shields.io/travis/karbon14/home-api/master.svg?label=travis&maxAge=43200)](https://travis-ci.org/karbon14/home-api)
+[![codecov](https://codecov.io/gh/karbon14/home-api/branch/master/graph/badge.svg)](https://codecov.io/gh/karbon14/home-api)
 
 This API exposes the following services:
 
