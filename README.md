@@ -1,6 +1,6 @@
 
 # Karbon14 home API
-[![Build Status](https://img.shields.io/travis/karbon14/home-api/master.svg?label=travis&maxAge=43200)](https://travis-ci.org/karbon14/home-api)
+[![travis](https://img.shields.io/travis/karbon14/home-api/master.svg?label=travis&maxAge=43200)](https://travis-ci.org/karbon14/home-api)
 
 This API exposes the following services:
 
@@ -114,6 +114,7 @@ npm run test
 |---|
 Natanael Zalazar |
 :octocat:[@zalazarnatanael](https://github.com/zalazarnatanael)
+
 
 ## License
 [MIT](https://github.com/karbon14/home-api/blob/master/LICENSE)
