@@ -1,7 +1,8 @@
 
 # Karbon14 home API
-[![travis](https://img.shields.io/travis/karbon14/home-api/master.svg?label=travis&maxAge=43200)](https://travis-ci.org/karbon14/home-api)
+[![travis](https://travis-ci.org/karbon14/home-api.svg?branch=master)](https://travis-ci.org/karbon14/home-api)
 [![codecov](https://codecov.io/gh/karbon14/home-api/branch/master/graph/badge.svg)](https://codecov.io/gh/karbon14/home-api)
+[![greenkeeper](https://badges.greenkeeper.io/karbon14/home-api.svg)](https://greenkeeper.io/)
 
 This API exposes the following services:
 
@@ -111,7 +112,7 @@ npm run test
 - Mailchimp
 
 ## Team
-[![Natanael Zalazar](https://avatars.githubusercontent.com/u/11928153?s=64)](https://github.com/zalazarnatanael) |
+[![Natanael Zalazar](https://avatars.githubusercontent.com/u/11928153?s=64)](https://github.com/zalazarnatanael)  |
 |---|
 Natanael Zalazar |
 :octocat:[@zalazarnatanael](https://github.com/zalazarnatanael)
