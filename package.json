@@ -16,7 +16,7 @@
     "test": "npm run test:unit && npm run test:e2e && npm run codecov",
     "test:unit": "NODE_ENV=test jest ./src",
     "test:e2e": "NODE_ENV=test jest ./test",
-    "codecov": "npm run coverage && codecov -t f5539405-6f73-41f5-9fa7-09d3134c2a0d",
+    "codecov": "codecov",
     "coverage": "jest --coverage",
     "lint": "eslint -f table src test",
     "lint:fix": "eslint --fix -f table src test",

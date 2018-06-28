@@ -9,10 +9,11 @@ before_script:
   - greenkeeper-lockfile-update
   - sudo docker-compose -f ./docker/docker-compose.yml up -d
 script:
-  - codecov
   - npm run lint
+  - npm run coverage
   - npm run start:ci
   - npm run test
+  - npm run codecov
 after_script:
   - greenkeeper-lockfile-upload
 deploy:
