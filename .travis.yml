@@ -12,7 +12,6 @@ script:
   - npm run lint
   - npm run start:ci
   - npm run test
-  - npm run coverage
   - npm run codecov
 after_script:
   - greenkeeper-lockfile-upload
