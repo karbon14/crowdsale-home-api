@@ -13,7 +13,7 @@
     "start:dev": "npm run docker && NODE_ENV=development nodemon --exec npm run babel-node",
     "docker": "docker-compose -f docker/docker-compose.yml up -d ",
     "babel-node": "babel-node ./src/index.js ",
-    "test": "npm run test:unit && npm run test:e2e && npm run codecov",
+    "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "NODE_ENV=test jest ./src",
     "test:e2e": "NODE_ENV=test jest ./test",
     "codecov": "codecov",
