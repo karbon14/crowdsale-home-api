@@ -10,12 +10,11 @@
     "build": "babel src --out-dir dist --copy-files",
     "start": "node ./dist/index.js",
     "start:ci": "NODE_ENV=development forever start ./dist",
-    "start:dev": "npm run docker && NODE_ENV=development nodemon --exec npm run babel-node",
+    "start:dev": "npm run docker && NODE_ENV=development nodemon --inspect=5858 -r @babel/register",
     "docker": "docker-compose -f docker/docker-compose.yml up -d ",
-    "babel-node": "babel-node ./src/index.js ",
-    "test": "NODE_ENV=test jest ./src ./test --no-cache --coverage",
-    "test:unit": "NODE_ENV=test jest ./src",
-    "test:e2e": "NODE_ENV=test jest ./test",
+    "test": "jest ./src ./test --no-cache --coverage",
+    "test:unit": "jest ./src",
+    "test:e2e": "jest ./test",
     "codecov": "codecov",
     "lint": "eslint -f table src test",
     "lint:fix": "eslint --fix -f table src test",
@@ -65,7 +64,7 @@
     "jest": "23.2.0",
     "lint-staged": "7.2.0",
     "nodemon": "1.17.5",
-    "prettier": "1.13.7",
+    "prettier": "1.13.6",
     "supertest": "3.1.0"
   }
 }
