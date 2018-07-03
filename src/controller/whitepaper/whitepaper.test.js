@@ -1,10 +1,9 @@
 import { whitepaper, whitepaperSchema } from './whitepaper'
 
 const ctx = {
-  request: {
-  },
+  request: {},
   query: {
-    lang: 'es'
+    lang: 'es',
   },
   set: jest.fn(),
 }

@@ -12,7 +12,7 @@ const {
 
 export const ensureEnvVars = (envVar = '', error) => {
   if (envVar) return envVar
-  
+
   log.warn(error)
 }
 
