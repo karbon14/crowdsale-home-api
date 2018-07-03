@@ -1,4 +1,4 @@
-const createMessage = (from, to = 'test@gmail.com', name, text) => ({
+export const createMessage = (from, to = 'test@gmail.com', name, text) => ({
   from,
   to,
   subject: `Support to ${name}`,
