@@ -36,6 +36,7 @@ deploy:
     region: us-east-1
     on: *2
 script:
-  - zip -r dist package.json package-lock.json dist appspec.yml
+  - zip -r dist package.json package-lock.json dist
   - mkdir -p build-upload
   - mv dist.zip build-upload/dist.zip
+  - mv appspec.yml build-upload/appspec.yml
