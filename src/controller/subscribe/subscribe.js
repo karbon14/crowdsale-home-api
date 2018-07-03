@@ -1,4 +1,6 @@
-export const subscribeSchema = (Joi) => ({
+import Joi from 'joi'
+
+export const subscribeSchema = () => ({
   email: Joi.string()
     .email()
     .required(),

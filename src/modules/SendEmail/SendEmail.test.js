@@ -1,8 +1,10 @@
-import { SendEmail } from './SendEmail'
+import { SendEmail, createMessage } from './SendEmail'
 
 const name = 'test'
 const from = 'contact.test@gmail.com'
+const to = 'contact.to@gmail.com'
 const text = 'text'
+const defaultTo = 'test@gmail.com'
 
 const transporter = {
   sendMail: jest.fn(),
@@ -38,6 +40,22 @@ describe('SendEmail module', () => {
       } catch (error) {
         expect(error).toEqual({ message })
       }
+    })
+  })
+
+  describe('When createMessage not receives to', () => {
+    it('Should return default email', async () => {
+      const message = createMessage(from, undefined, name, text)
+
+      expect(message).toEqual({ from, to: defaultTo, subject: `Support to ${name}`, text })
+    })
+  })
+
+  describe('When createMessage receives all parameters', () => {
+    it('Should return default email', async () => {
+      const message = createMessage(from, to, name, text)
+
+      expect(message).toEqual({ from, to, subject: `Support to ${name}`, text })
     })
   })
 })

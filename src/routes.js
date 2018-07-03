@@ -15,10 +15,10 @@ const router = new Router()
 
 import { contact, contactSchema } from './controller/contact/contact'
 import { subscribe, subscribeSchema } from './controller/subscribe/subscribe'
-import { whitepaper } from './controller/whitepaper/whitepaper'
+import { whitepaper, whitepaperSchema } from './controller/whitepaper/whitepaper'
 
-router.post('/subscribe', validateSchema(subscribeSchema(joi)), subscribe(addEmailList))
-router.post('/contact', validateSchema(contactSchema(joi)), contact(sendEmail))
-router.get('/whitepaper', whitepaper(configuration))
+router.post('/contact', validateSchema({ body:  contactSchema }), contact(sendEmail))
+router.post('/subscribe', validateSchema({ body: subscribeSchema }), subscribe(addEmailList))
+router.get('/whitepaper', validateSchema({ query: whitepaperSchema }), whitepaper(configuration))
 
 export { router }

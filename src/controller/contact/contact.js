@@ -1,4 +1,6 @@
-export const contactSchema = (Joi) => ({
+import Joi from 'joi'
+
+export const contactSchema = () => ({
   name: Joi.string().required(),
   email: Joi.string()
     .email()

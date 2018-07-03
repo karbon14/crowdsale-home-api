@@ -1,5 +1,4 @@
 import { subscribe, subscribeSchema } from './subscribe'
-import joi from 'joi'
 
 const addEmailList = jest.fn()
 
@@ -38,7 +37,7 @@ describe('Subscribe controller ', () => {
 
   describe('When subscribeSchema success', () => {
     it('Should object with schema', async () => {
-      const schema = subscribeSchema(joi)
+      const schema = subscribeSchema()
 
       expect(schema).toHaveProperty('email')
     })
