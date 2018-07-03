@@ -16,7 +16,12 @@ script:
 after_script:
   - greenkeeper-lockfile-upload
 deploy:
-  provider: heroku
-  app: karbon14-home-api
-  api_key: 
-    secure: $HEROKU_API_KEY
+  - provider: s3
+    acl: public_read
+    local_dir: 'dist'
+    skip_cleanup: true
+    bucket: karbon14-home
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    on:
+      branch: master
