@@ -25,7 +25,17 @@ deploy:
     local_dir: 'build-upload'
     on:
       branch: aws-deploy
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: karbon14-home
+    key: dist.zip
+    bundle_type: zip
+    application: Karbon14-home
+    deployment_group: Karbon14-home
+    region: us-east-1
+    on: *2
 script:
-  - zip -r dist package.json package-lock.json dist
+  - zip -r dist package.json package-lock.json dist appspec.yml
   - mkdir -p build-upload
   - mv dist.zip build-upload/dist.zip
