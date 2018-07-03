@@ -41,8 +41,27 @@ describe('Configuration ', () => {
       expect(configuration).toHaveProperty('EMAIL_CONTACT_TO')
       expect(configuration).toHaveProperty('MAILCHIMP_API_KEY')
       expect(configuration).toHaveProperty('MAILCHIMP_LIST_ID')
-      expect(configuration).toHaveProperty('WHITEPAPER_FILE')
+      expect(configuration).toHaveProperty('WHITEPAPER_FILE_EN')
+      expect(configuration).toHaveProperty('WHITEPAPER_FILE_ES')
       expect(configuration).toHaveProperty('development')
+    })
+  })
+
+  describe('When NODE_ENV is development', () => {
+    test('Should development be true', () => {
+      process.env.NODE_ENV = 'development'
+      const { configuration } = require('./configuration')
+
+      expect(configuration.development).toEqual(false)
+    })
+  })
+
+  describe('When NODE_ENV is empty', () => {
+    test('Should development be false', () => {
+      process.env.NODE_ENV = ''
+      const { configuration } = require('./configuration')
+
+      expect(configuration.development).toEqual(false)
     })
   })
 })
