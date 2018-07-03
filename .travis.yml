@@ -18,10 +18,14 @@ after_script:
 deploy:
   - provider: s3
     acl: public_read
-    local_dir: 'dist'
+    local_dir: 'build-upload'
     skip_cleanup: true
     bucket: karbon14-home
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     on:
-      branch: master
+      branch: aws-deploy
+script:
+  - zip -r dist *
+  - mkdir -p build-upload
+  - mv dist.zip build-upload/dist.zip
