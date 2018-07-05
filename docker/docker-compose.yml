@@ -7,3 +7,14 @@ services:
       - "1025:1025"
       - "1080:1080"
     command: bin/maildev --web 1080 --smtp 1025
+    
+  swagger_ui:
+    image: "swaggerapi/swagger-ui"
+    volumes: ["../src/public:/public"]
+    environment:
+      - SWAGGER_JSON=/public/swagger.json
+      - BASE_URL=/swagger
+    restart: always
+    ports:
+      - "1081:8080"
+

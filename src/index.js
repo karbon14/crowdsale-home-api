@@ -3,7 +3,6 @@ import Koa from 'koa'
 import { router } from './routes'
 import bodyParser from 'koa-bodyparser'
 import koaBody from 'koa-body'
-
 const PORT = process.env.PORT || 3000
 const app = new Koa()
 
