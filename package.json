@@ -19,7 +19,8 @@
     "lint": "eslint -f table src test",
     "lint:fix": "eslint --fix -f table src test",
     "precommit": "lint-staged",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "swagger": "node -r @babel/register ./src/swagger.js"
   },
   "lint-staged": {
     "*.js": [
@@ -47,7 +48,8 @@
     "koa-router": "7.4.0",
     "mailchimp-api-v3": "1.12.0",
     "nodemailer": "4.6.7",
-    "nodemailer-sendgrid-transport": "0.2.0"
+    "nodemailer-sendgrid-transport": "0.2.0",
+    "swagger-jsdoc": "1.9.7"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.51",
@@ -55,7 +57,7 @@
     "@babel/node": "7.0.0-beta.51",
     "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.51",
     "@babel/preset-env": "7.0.0-beta.51",
-    "@babel/register": "^7.0.0-beta.51",
+    "@babel/register": "7.0.0-beta.51",
     "babel-core": "7.0.0-bridge.0",
     "eslint": "5.0.1",
     "eslint-plugin-prettier": "2.6.1",
