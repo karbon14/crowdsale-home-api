@@ -1,14 +1,22 @@
 require('dotenv').config({ path: '.env' })
 import Koa from 'koa'
+import cors from 'koajs-cors'
 import { router } from './routes'
 import bodyParser from 'koa-bodyparser'
 import koaBody from 'koa-body'
 const PORT = process.env.PORT || 3000
 const app = new Koa()
 
+const corsOptions = {
+  methods: ['GET', 'POST'],
+  headers: ['Content-Type', 'Authorization', 'token'],
+  origin: '*',
+}
+
 app
   .use(koaBody())
   .use(bodyParser())
+  .use(cors(corsOptions))
   .use(async (ctx, next) => {
     const start = Date.now()
     await next()
