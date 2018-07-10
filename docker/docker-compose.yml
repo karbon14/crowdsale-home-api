@@ -13,8 +13,7 @@ services:
     volumes: ["../src/public:/public"]
     environment:
       - SWAGGER_JSON=/public/swagger.json
-      - BASE_URL=/swagger
     restart: always
     ports:
-      - "1081:8080"
+      - "3000:8080"
 
