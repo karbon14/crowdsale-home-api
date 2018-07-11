@@ -38,6 +38,6 @@ deploy:
     on:
       branch: master
 script:
-  - zip -r dist package.json package-lock.json dist appspec.yml
+  - zip -r dist package.json package-lock.json dist appspec.yml docker
   - mkdir -p build-upload
   - mv dist.zip build-upload/dist.zip
