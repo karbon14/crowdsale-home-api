@@ -7,9 +7,7 @@ files:
 hooks:
   Install:
     - location: scripts/npm-install.sh
-      runas: root
       timeout: 300
   AfterInstall:
     - location: scripts/npm-start.sh
-      runas: root
       timeout: 60
