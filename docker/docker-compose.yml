@@ -10,7 +10,7 @@ services:
     
   swagger_ui:
     image: "swaggerapi/swagger-ui"
-    volumes: ["../src/public:/public"]
+    volumes: ["${SWAGGER_URL}"]
     environment:
       - SWAGGER_JSON=/public/swagger.json
     restart: always
