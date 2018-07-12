@@ -13,4 +13,4 @@ hooks:
       timeout: 300
   AfterInstall:
     - location: scripts/npm-start.sh
-      timeout: 600
+      timeout: 120
