@@ -9,7 +9,7 @@ hooks:
     - location: scripts/npm-install.sh
       runas: root
       timeout: 300
-  ApplicationStart:
+  AfterStart:
     - location: scripts/npm-start.sh
       runas: root
       timeout: 60
