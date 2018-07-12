@@ -1,0 +1,5 @@
+version: '3'
+
+services:
+  swagger_ui:
+    volumes: ["../src/public:/public"]

@@ -1,4 +1,5 @@
-version: '2'
+version: '3'
+
 services:
   maildev:
     image: "djfarrelly/maildev"
@@ -10,7 +11,7 @@ services:
     
   swagger_ui:
     image: "swaggerapi/swagger-ui"
-    volumes: ["../src/public:/public"]
+    volumes: ["../dist/public:/public"]
     environment:
       - SWAGGER_JSON=/public/swagger.json
     restart: always
