@@ -5,6 +5,9 @@ files:
     destination: /home/ubuntu/karbon14-home
     owner: ubuntu
 hooks:
+  BeforeInstall:
+    - location: scripts/install.sh
+      timeout: 300
   Install:
     - location: scripts/npm-install.sh
       timeout: 300
