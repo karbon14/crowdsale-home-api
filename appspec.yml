@@ -3,7 +3,7 @@ os: linux
 files:
   - source: ./
     destination: /home/ubuntu/karbon14-home
-    owner: root
+    owner: ubuntu
 hooks:
   Install:
     - location: scripts/npm-install.sh
