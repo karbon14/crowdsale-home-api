@@ -12,7 +12,7 @@ services:
   swagger_ui:
     image: "swaggerapi/swagger-ui"
     environment:
-      - API_URL=https://api.karbon14.org/api-docs
+      - API_URL=https://api.karbon14.org/v1/api-docs
     restart: always
     ports:
       - "8081:8080"
