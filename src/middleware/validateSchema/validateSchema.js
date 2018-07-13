@@ -2,7 +2,7 @@ import { validate } from 'joi'
 
 export const validateSchema = (data) => async (ctx, next) => {
   const { query, body, params, options } = data
-
+  
   try {
     body && (await validate(ctx.request.body, body(ctx.request.body), options))
     query && (await validate(ctx.query, query(ctx.query), options))
