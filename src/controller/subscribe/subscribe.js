@@ -11,7 +11,7 @@ export const subscribe = (addEmailList) => async (ctx) => {
 
   try {
     await addEmailList(email)
-
+    
     ctx.status = 200
   } catch (e) {
     ctx.throw(400, e.message)
