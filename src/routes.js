@@ -16,61 +16,88 @@ import { contact, contactSchema } from './controller/contact/contact'
 import { subscribe, subscribeSchema } from './controller/subscribe/subscribe'
 import { whitepaper, whitepaperSchema } from './controller/whitepaper/whitepaper'
 
+import swaggerjson from './public/swagger.json'
+
 /**
  * @swagger
- * /contact:
- *   post:
- *     description: Support email
- *     produces:
- *       - application/json
- *     parameters:
- *       - name: name
- *         description: Name of user.
- *         required: true
+ * paths:
+ *   /contact:
+ *     post:
+ *       description: Support email
+ *       produces:
+ *         - application/json
+ *       parameters:
+ *         - in: body
+ *           name: contact
+ *           description: Contact schema.
+ *           schema:
+ *             $ref: '#/definitions/Contact'
+ *       responses:
+ *         200:
+ *           description: 200 ok
+ * definitions:
+ *   Contact:
+ *     properties:
+ *       name:
  *         type: string
- *       - name: email
- *         description: Email of user.
- *         required: true
+ *       email:
  *         type: string
- *       - name: message
- *         description: Message of support.
- *         required: true
+ *       message:
  *         type: string
- *     responses:
- *       200:
- *         description: 200 ok
+ *     required:
+ *       - name
+ *       - email
+ *       - message
  */
 router.post('/contact', validateSchema({ body: contactSchema }), contact(sendEmail))
 
 /**
  * @swagger
- * /subscribe:
- *   post:
+ * paths:
+ *  /subscribe:
+ *    post:
  *     description: Subscribe to a list of mailchimp
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: email
- *         description: Email to use for subscribe.
- *         required: true
- *         type: string
+ *       - in: body
+ *         name: subscribe
+ *         description: Subscribe schema.
+ *         schema:
+ *           $ref: '#/definitions/Subscribe'
  *     responses:
  *       200:
  *         description: 200 ok
+ * definitions:
+ *   Subscribe:
+ *     properties:
+ *       email:
+ *         type: string
+ *     required:
+ *       - email
  */
 router.post('/subscribe', validateSchema({ body: subscribeSchema }), subscribe(addEmailList))
 
 /**
  * @swagger
- * /whitepaper:
+ * paths:
+ *  /whitepaper:
  *   get:
  *     description: Download whitepaper
  *     produces:
- *       - application/json
+ *       - application/pdf
  *     responses:
- *       200:
+ *       '200':
  *         description: File whitepaper
+ *         content:
+ *          application/pdf:
+ *           schema:
+ *            type: string
+ *            format: binary
+ * 
  */
 router.get('/whitepaper', validateSchema({ query: whitepaperSchema }), whitepaper(configuration))
+
+router.get('/api-docs', (ctx) => ctx.body = swaggerjson)
 
 export { router }

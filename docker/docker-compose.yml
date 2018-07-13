@@ -1,4 +1,5 @@
-version: '2'
+version: '3'
+
 services:
   maildev:
     image: "djfarrelly/maildev"
@@ -10,10 +11,9 @@ services:
     
   swagger_ui:
     image: "swaggerapi/swagger-ui"
-    volumes: ["../src/public:/public"]
     environment:
-      - SWAGGER_JSON=/public/swagger.json
+      - API_URL=https://api.karbon14.org/v1/api-docs
     restart: always
     ports:
-      - "3000:8080"
+      - "8081:8080"
 

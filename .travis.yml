@@ -6,10 +6,12 @@ before_install:
   - npm install -g greenkeeper-lockfile@1
   - npm install -g codecov
 before_script:
+  - npm run build
   - greenkeeper-lockfile-update
   - sudo docker-compose -f ./docker/docker-compose.yml up -d
 script:
   - npm run lint
+  - npm run swagger
   - npm run start:ci
   - npm run test
   - npm run codecov
@@ -38,6 +40,6 @@ deploy:
     on:
       branch: master
 script:
-  - zip -r dist package.json package-lock.json dist appspec.yml
+  - zip -r dist package.json package-lock.json dist appspec.yml docker scripts
   - mkdir -p build-upload
   - mv dist.zip build-upload/dist.zip
