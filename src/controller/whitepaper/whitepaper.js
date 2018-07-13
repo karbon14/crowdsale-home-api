@@ -16,6 +16,6 @@ export const whitepaper = (configuration) => (ctx) => {
   ctx.body = createReadStream(fileName)
 
   ctx.set('Content-disposition', `attachment; filename=${whitepaperName}`)
-  ctx.set('Content-Type', 'application/force-download')
+  ctx.set('Content-Type', 'application/pdf')
   ctx.status = 200
 }
