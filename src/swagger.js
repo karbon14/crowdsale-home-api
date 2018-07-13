@@ -7,6 +7,7 @@ const options = {
       title: 'Karbon14 API',
       version: '1.0.0',
     },
+    basePath: '/v1',
   },
   apis: ['./src/routes.js'],
 }

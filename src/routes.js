@@ -10,7 +10,9 @@ const transporter = Transporter(configuration)
 const sendEmail = SendEmail(configuration, transporter)
 const addEmailList = AddEmailList(configuration)
 
-const router = new Router()
+const router = new Router({
+    prefix: '/v1'
+  })
 
 import { contact, contactSchema } from './controller/contact/contact'
 import { subscribe, subscribeSchema } from './controller/subscribe/subscribe'
