@@ -42,6 +42,7 @@ import swaggerjson from './public/swagger.json'
  *         type: string
  *       email:
  *         type: string
+ *         format: email
  *       message:
  *         type: string
  *     required:
@@ -73,6 +74,7 @@ router.post('/contact', validateSchema({ body: contactSchema }), contact(sendEma
  *     properties:
  *       email:
  *         type: string
+ *         format: email
  *     required:
  *       - email
  */
@@ -94,10 +96,10 @@ router.post('/subscribe', validateSchema({ body: subscribeSchema }), subscribe(a
  *           schema:
  *            type: string
  *            format: binary
- * 
+ *
  */
 router.get('/whitepaper', validateSchema({ query: whitepaperSchema }), whitepaper(configuration))
 
-router.get('/api-docs', (ctx) => ctx.body = swaggerjson)
+router.get('/api-docs', (ctx) => (ctx.body = swaggerjson))
 
 export { router }

@@ -8,13 +8,9 @@ before_install:
 before_script:
   - npm run build
   - greenkeeper-lockfile-update
-  - sudo docker-compose -f ./docker/docker-compose.yml up -d
+  - make dev
 script:
-  - npm run lint
-  - npm run swagger
-  - npm run start:ci
-  - npm run test
-  - npm run codecov
+  - make ci
 after_script:
   - greenkeeper-lockfile-upload
 deploy:
@@ -40,6 +36,6 @@ deploy:
     on:
       branch: master
 script:
-  - zip -r dist package.json package-lock.json dist appspec.yml docker scripts
+  - zip -r dist package.json package-lock.json appspec.yml docker scripts src makefile
   - mkdir -p build-upload
   - mv dist.zip build-upload/dist.zip

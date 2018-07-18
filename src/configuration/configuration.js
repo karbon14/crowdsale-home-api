@@ -7,6 +7,8 @@ const {
   MAILCHIMP_LIST_ID,
   WHITEPAPER_FILE_EN,
   WHITEPAPER_FILE_ES,
+  MAILDEV_HOST,
+  MAILDEV_PORT,
   NODE_ENV,
 } = process.env
 
@@ -23,5 +25,7 @@ export const configuration = {
   MAILCHIMP_LIST_ID: ensureEnvVars(MAILCHIMP_LIST_ID, 'Mailchimp List Id To is required'),
   WHITEPAPER_FILE_EN: WHITEPAPER_FILE_EN || 'whitepaper_Karbon14.pdf',
   WHITEPAPER_FILE_ES: WHITEPAPER_FILE_ES || 'whitepaper_Karbon14.pdf',
+  MAILDEV_HOST: MAILDEV_HOST || 'localhost',
+  MAILDEV_PORT: MAILDEV_PORT || 1025,
   development: NODE_ENV === 'development' ? true : false,
 }

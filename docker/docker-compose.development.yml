@@ -1,6 +1,38 @@
 version: '3'
 
 services:
+  nginx:
+    image: "nginx"
+    container_name: "nginx"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./conf/nginx.development.conf:/etc/nginx/nginx.conf
+      - .:/etc/letsencrypt/
+
   swagger_ui:
     environment:
-      - API_URL=http://localhost:3000/api-docs
+      - API_URL=http://localhost:8080/v1/swagger.json
+  
+  karbon14-api:
+    ports:
+      - "5858:5858"
+    volumes:
+      - ../:/usr/src/karbon14-api/
+      - /usr/src/karbon14-api/node_modules
+    command: npm run start:dev
+    links:
+      - maildev
+    depends_on:
+      - maildev
+    environment:
+      - MAILDEV_HOST=maildev
+      - MAILDEV_PORT=1025
+
+  maildev:
+    image: "djfarrelly/maildev"
+    container_name: "maildev"
+    ports:
+      - "1025:1025"
+      - "1080:1080"
+    command: bin/maildev --web 1080 --smtp 1025

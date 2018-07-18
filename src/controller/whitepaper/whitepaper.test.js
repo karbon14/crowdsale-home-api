@@ -20,7 +20,7 @@ describe('Whitepaper controller ', () => {
         'Content-disposition',
         `attachment; filename=${configuration.WHITEPAPER_FILE_ES}`,
       ])
-      expect(ctx.set.mock.calls[1]).toEqual(['Content-Type', 'application/force-download'])
+      expect(ctx.set.mock.calls[1]).toEqual(['Content-Type', 'application/pdf'])
     })
   })
 
@@ -36,7 +36,7 @@ describe('Whitepaper controller ', () => {
         'Content-disposition',
         `attachment; filename=${configuration.WHITEPAPER_FILE_EN}`,
       ])
-      expect(ctx.set.mock.calls[1]).toEqual(['Content-Type', 'application/force-download'])
+      expect(ctx.set.mock.calls[1]).toEqual(['Content-Type', 'application/pdf'])
     })
   })
 

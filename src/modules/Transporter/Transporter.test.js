@@ -37,9 +37,12 @@ describe('Transporter module', () => {
     it('Should createTransport called with maildev', async () => {
       const configuration = {
         development: true,
+        MAILDEV_HOST: 'localhost',
+        MAILDEV_PORT: 1025,
       }
 
       const optionMaildev = {
+        host: 'localhost',
         port: 1025,
         ignoreTLS: true,
       }
