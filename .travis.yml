@@ -11,6 +11,9 @@ before_script:
   - make dev-daemon
 script:
   - make ci
+  - zip -r dist package.json package-lock.json appspec.yml docker scripts src makefile .babelrc
+  - mkdir -p build-upload
+  - mv dist.zip build-upload/dist.zip
 after_script:
   - greenkeeper-lockfile-upload
 deploy:
@@ -35,7 +38,4 @@ deploy:
     wait-until-deployed: true
     on:
       branch: master
-script:
-  - zip -r dist package.json package-lock.json appspec.yml docker scripts src makefile .babelrc
-  - mkdir -p build-upload
-  - mv dist.zip build-upload/dist.zip
+
