@@ -1,4 +1,3 @@
-require('dotenv').config({ path: '.env' })
 import Koa from 'koa'
 import cors from 'koajs-cors'
 import { router } from './routes'
@@ -27,5 +26,6 @@ app
   })
   .use(router.routes())
   .use(router.allowedMethods())
+  .use(serve(__dirname + '/public'))
 
 app.listen(PORT, () => console.log(`Koa app listening on http://localhost:${PORT}`))

@@ -7,10 +7,9 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist --copy-files",
-    "start": "forever start ./dist/index.js",
-    "start:ci": "NODE_ENV=development forever start ./dist",
-    "start:dev": "NODE_ENV=development nodemon --inspect=5858 -r @babel/register ./src/index.js",
+    "build": "babel src --source-maps=false --out-dir dist --copy-files",
+    "start": "node ./dist/index.js",
+    "start:dev": "NODE_ENV=development nodemon --inspect=0.0.0.0:5858 -r @babel/register --watch ./src ./src/index.js",
     "test": "jest ./src ./test --no-cache --coverage",
     "test:unit": "jest ./src",
     "test:e2e": "jest ./test",
@@ -18,7 +17,8 @@
     "lint": "eslint -f table src test",
     "lint:fix": "eslint --fix -f table src test",
     "precommit": "lint-staged",
-    "swagger": "node -r @babel/register ./src/swagger.js"
+    "swagger": "node -r @babel/register ./src/swagger.js",
+    "dev-daemon": "docker-compose -f ./docker/docker-compose.yml -f ./docker/docker-compose.development.yml start"
   },
   "lint-staged": {
     "*.js": [
@@ -38,7 +38,6 @@
   "homepage": "https://github.com/karbon14/home-api#readme",
   "dependencies": {
     "bunyan": "1.8.12",
-    "dotenv": "6.0.0",
     "joi": "13.4.0",
     "koa": "2.5.1",
     "koa-body": "4.0.4",
@@ -53,15 +52,14 @@
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.53",
-    "@babel/register": "7.0.0-beta.53",
-    "@babel/node": "7.0.0-beta.53",
     "@babel/core": "7.0.0-beta.53",
+    "@babel/node": "7.0.0-beta.53",
     "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.53",
     "@babel/preset-env": "7.0.0-beta.53",
+    "@babel/register": "7.0.0-beta.53",
     "babel-core": "7.0.0-bridge.0",
     "eslint": "5.0.1",
     "eslint-plugin-prettier": "2.6.2",
-    "forever": "0.15.3",
     "husky": "0.14.3",
     "jest": "23.2.0",
     "lint-staged": "7.2.0",
