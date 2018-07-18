@@ -6,7 +6,6 @@ before_install:
   - npm install -g greenkeeper-lockfile@1
   - npm install -g codecov
 before_script:
-  - npm run build
   - greenkeeper-lockfile-update
   - make dev-daemon
 script:
