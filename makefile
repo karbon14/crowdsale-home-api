@@ -37,7 +37,7 @@ dev:
 
 ## Start daemon (development mode)
 dev-daemon: 
-	docker-compose -f ./docker/docker-compose.yml -f ./docker/docker-compose.development.yml start
+	docker-compose -f ./docker/docker-compose.yml -f ./docker/docker-compose.development.yml up -d
 
 ## Restart docker-compose (development mode)
 dev-restart: 

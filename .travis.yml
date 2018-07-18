@@ -8,7 +8,7 @@ before_install:
 before_script:
   - npm run build
   - greenkeeper-lockfile-update
-  - npm run dev-daemon
+  - make dev-daemon
 script:
   - make ci
 after_script:
