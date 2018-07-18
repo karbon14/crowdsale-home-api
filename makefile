@@ -76,7 +76,7 @@ prod:
 
 ## Start daemon (production mode)
 prod-daemon:
-	docker-compose -f ./docker/docker-compose.yml start
+	docker-compose -f ./docker/docker-compose.yml up -d
 
 ## Restart docker-compose (production mode)
 prod-restart: 
