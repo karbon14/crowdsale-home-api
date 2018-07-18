@@ -4,15 +4,13 @@ services:
   nginx:
     image: "nginx"
     container_name: "nginx"
-    ports:
-      - "8080:80"
     volumes:
       - ./conf/nginx.development.conf:/etc/nginx/nginx.conf
       - .:/etc/letsencrypt/
 
   swagger_ui:
     environment:
-      - API_URL=http://localhost:8080/v1/swagger.json
+      - API_URL=http://localhost/v1/swagger.json
   
   karbon14-api:
     ports:
