@@ -51,7 +51,7 @@
     "swagger-jsdoc": "1.9.7"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.53",
+    "@babel/cli": "7.0.0-rc.1",
     "@babel/core": "7.0.0-beta.53",
     "@babel/node": "7.0.0-beta.53",
     "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.53",
