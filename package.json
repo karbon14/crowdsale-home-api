@@ -67,5 +67,8 @@
     "nodemon": "1.18.3",
     "prettier": "1.13.6",
     "supertest": "3.1.0"
+  },
+  "localDependencies": {
+    "@karbon14/whitepaper": "../karbon14/whitepaper"
   }
 }

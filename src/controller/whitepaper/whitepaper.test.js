@@ -11,14 +11,12 @@ const ctx = {
 describe('Whitepaper controller ', () => {
   describe('When whitepaper success', () => {
     test('Should return 200', async () => {
-      const configuration = { WHITEPAPER_FILE_ES: 'whitepaper_Karbon14.pdf' }
-
-      await whitepaper(configuration)(ctx)
+      await whitepaper(ctx)
       expect(ctx.status).toBe(200)
 
       expect(ctx.set.mock.calls[0]).toEqual([
         'Content-disposition',
-        `attachment; filename=${configuration.WHITEPAPER_FILE_ES}`,
+        `attachment; filename=whitepaper_Karbon14_ES.pdf`,
       ])
       expect(ctx.set.mock.calls[1]).toEqual(['Content-Type', 'application/pdf'])
     })
@@ -27,14 +25,13 @@ describe('Whitepaper controller ', () => {
   describe('When whitepaper does not receive lang', () => {
     test('Should return 200', async () => {
       ctx.query = {}
-      const configuration = { WHITEPAPER_FILE_EN: 'whitepaper_Karbon14.pdf' }
 
-      await whitepaper(configuration)(ctx)
+      await whitepaper(ctx)
       expect(ctx.status).toBe(200)
 
       expect(ctx.set.mock.calls[0]).toEqual([
         'Content-disposition',
-        `attachment; filename=${configuration.WHITEPAPER_FILE_EN}`,
+        `attachment; filename=whitepaper_Karbon14_ES.pdf`,
       ])
       expect(ctx.set.mock.calls[1]).toEqual(['Content-Type', 'application/pdf'])
     })
