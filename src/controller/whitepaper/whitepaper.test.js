@@ -14,10 +14,7 @@ describe('Whitepaper controller ', () => {
       await whitepaper(ctx)
       expect(ctx.status).toBe(200)
 
-      expect(ctx.set.mock.calls[0]).toEqual([
-        'Content-disposition',
-        `attachment; filename=whitepaper_Karbon14_ES.pdf`,
-      ])
+      expect(ctx.set.mock.calls[0]).toEqual(['Content-disposition', `attachment; filename=whitepaper_Karbon14_ES.pdf`])
       expect(ctx.set.mock.calls[1]).toEqual(['Content-Type', 'application/pdf'])
     })
   })
@@ -29,10 +26,7 @@ describe('Whitepaper controller ', () => {
       await whitepaper(ctx)
       expect(ctx.status).toBe(200)
 
-      expect(ctx.set.mock.calls[0]).toEqual([
-        'Content-disposition',
-        `attachment; filename=whitepaper_Karbon14_ES.pdf`,
-      ])
+      expect(ctx.set.mock.calls[0]).toEqual(['Content-disposition', `attachment; filename=whitepaper_Karbon14_ES.pdf`])
       expect(ctx.set.mock.calls[1]).toEqual(['Content-Type', 'application/pdf'])
     })
   })
