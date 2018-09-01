@@ -35,7 +35,7 @@ describe('Whitepaper controller ', () => {
   })
 
   describe('When whitepaperSchema success', () => {
-    it('Should object with schema', async () => {
+    it('Should a valid object schema for this endpoint', async () => {
       const schema = whitepaperSchema()
 
       expect(schema).toHaveProperty('lang')
