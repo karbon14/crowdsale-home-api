@@ -1,5 +1,5 @@
 
-# Karbon14 home API
+# Karbon14 Home API
 [![travis](https://travis-ci.org/karbon14/home-api.svg?branch=master)](https://travis-ci.org/karbon14/home-api)
 [![codecov](https://codecov.io/gh/karbon14/home-api/branch/master/graph/badge.svg)](https://codecov.io/gh/karbon14/home-api)
 [![greenkeeper](https://badges.greenkeeper.io/karbon14/home-api.svg)](https://greenkeeper.io/)
