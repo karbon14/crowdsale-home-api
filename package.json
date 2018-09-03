@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/karbon14/home-api#readme",
   "dependencies": {
-    "@karbon14/whitepaper": "1.2.0",
+    "@karbon14/whitepaper": "1.3.0",
     "bunyan": "1.8.12",
     "joi": "13.4.0",
     "koa": "2.5.1",
