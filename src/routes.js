@@ -1,5 +1,6 @@
 import Router from 'koa-router'
 import { validateSchema } from './middleware/validateSchema/validateSchema'
+
 import { configuration } from './configuration/configuration'
 
 import { SendEmail } from './modules/SendEmail/SendEmail'
@@ -98,7 +99,7 @@ router.post('/subscribe', validateSchema({ body: subscribeSchema }), subscribe(a
  *            format: binary
  *
  */
-router.get('/whitepaper', validateSchema({ query: whitepaperSchema }), whitepaper(configuration))
+router.get('/whitepaper', validateSchema({ query: whitepaperSchema }), whitepaper)
 
 router.get('/api-docs', (ctx) => (ctx.body = swaggerjson))
 
