@@ -67,6 +67,6 @@
     "lint-staged": "7.2.1",
     "nodemon": "1.18.3",
     "prettier": "1.14.0",
-    "supertest": "3.1.0"
+    "supertest": "3.3.0"
   }
 }
