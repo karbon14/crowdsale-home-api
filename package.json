@@ -39,7 +39,7 @@
   "dependencies": {
     "@karbon14/whitepaper": "1.5.0",
     "bunyan": "1.8.12",
-    "joi": "13.5.0",
+    "joi": "13.7.0",
     "koa": "2.5.1",
     "koa-body": "4.0.4",
     "koa-bodyparser": "4.2.1",
