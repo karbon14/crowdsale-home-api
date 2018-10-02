@@ -1,8 +1,8 @@
 
 # Karbon14 Home API
-[![travis](https://travis-ci.org/karbon14/home-api.svg?branch=master)](https://travis-ci.org/karbon14/home-api)
-[![codecov](https://codecov.io/gh/karbon14/home-api/branch/master/graph/badge.svg)](https://codecov.io/gh/karbon14/home-api)
-[![greenkeeper](https://badges.greenkeeper.io/karbon14/home-api.svg)](https://greenkeeper.io/)
+[![travis](https://travis-ci.org/karbon14/crowdsale-home-api.svg?branch=master)](https://travis-ci.org/karbon14/crowdsale-home-api)
+[![codecov](https://codecov.io/gh/karbon14/crowdsale-home-api/branch/master/graph/badge.svg)](https://codecov.io/gh/karbon14/crowdsale-home-api)
+[![greenkeeper](https://badges.greenkeeper.io/karbon14/crowdsale-home-api.svg)](https://greenkeeper.io/)
 
 This API exposes the following services:
 
