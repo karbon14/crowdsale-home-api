@@ -102,6 +102,10 @@ prod-ps:
 prod-stop:
 	docker-compose -f ./docker/docker-compose.yml stop
 
+## Down docker-compose (production mode)
+prod-down:
+	docker-compose -f ./docker/docker-compose.yml down
+
 
 #####################################################################################################################
 #																													#
