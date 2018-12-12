@@ -2,4 +2,4 @@
 
 set -e
 cd /home/ubuntu/karbon14-home
-make prod-restart
+make prod-daemon
