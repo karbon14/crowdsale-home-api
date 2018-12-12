@@ -1,8 +1,8 @@
 
-# Karbon14 home API
-[![travis](https://travis-ci.org/karbon14/home-api.svg?branch=master)](https://travis-ci.org/karbon14/home-api)
-[![codecov](https://codecov.io/gh/karbon14/home-api/branch/master/graph/badge.svg)](https://codecov.io/gh/karbon14/home-api)
-[![greenkeeper](https://badges.greenkeeper.io/karbon14/home-api.svg)](https://greenkeeper.io/)
+# Karbon14 Home API
+[![travis](https://travis-ci.org/karbon14/crowdsale-home-api.svg?branch=master)](https://travis-ci.org/karbon14/crowdsale-home-api)
+[![codecov](https://codecov.io/gh/karbon14/crowdsale-home-api/branch/master/graph/badge.svg)](https://codecov.io/gh/karbon14/crowdsale-home-api)
+[![greenkeeper](https://badges.greenkeeper.io/karbon14/crowdsale-home-api.svg)](https://greenkeeper.io/)
 
 This API exposes the following services:
 
@@ -112,10 +112,13 @@ npm run test
 - Mailchimp
 
 ## Team
+
 [![Natanael Zalazar](https://avatars.githubusercontent.com/u/11928153?s=64)](https://github.com/zalazarnatanael)  |
-|---|
-Natanael Zalazar |
-:octocat:[@zalazarnatanael](https://github.com/zalazarnatanael)
+[![Jose Luis Casella](https://avatars2.githubusercontent.com/u/23145933?s=64)](https://github.com/visionk14) |
+[![Walter Zalazar](https://avatars3.githubusercontent.com/u/5795257?s=64)](https://github.com/wolverinek14) |
+|---|---|---|
+Natanael Zalazar | Jose Luis Casella | Walter Zalazar |
+:octocat:[@zalazarnatanael](https://github.com/zalazarnatanael) | :octocat:[@visionk14](https://github.com/visionk14) | :octocat:[@wolverinek14](https://github.com/wolverinek14) |
 
 
 ## License

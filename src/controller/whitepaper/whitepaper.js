@@ -8,11 +8,11 @@ export const whitepaperSchema = () => ({
     .max(2),
 })
 
-export const whitepaper = (configuration) => (ctx) => {
+export const whitepaper = (ctx) => {
   const lang = ctx.query && ctx.query.lang ? ctx.query.lang : 'EN'
-  const whitepaperName = configuration[`WHITEPAPER_FILE_${lang.toUpperCase()}`]
+  const whitepaperName = `whitepaper_Karbon14_${lang.toUpperCase()}.pdf`
 
-  const fileName = resolve(__dirname, `../../public/${whitepaperName}`)
+  const fileName = resolve(__dirname, `../../../node_modules/@karbon14/whitepaper/whitepaper/${whitepaperName}`)
   ctx.body = createReadStream(fileName)
 
   ctx.set('Content-disposition', `attachment; filename=${whitepaperName}`)

@@ -17,7 +17,6 @@ app
   .use(koaBody())
   .use(bodyParser())
   .use(cors(corsOptions))
-  .use(serve(__dirname + '/public'))
   .use(async (ctx, next) => {
     const start = Date.now()
     await next()

@@ -8,7 +8,7 @@ describe('Whitepaper ', () => {
     it('Should return 200', (done) => {
       api
         .get('/whitepaper?lang=en')
-        .expect('content-disposition', 'attachment; filename=whitepaper_Karbon14.pdf')
+        .expect('content-disposition', 'attachment; filename=whitepaper_Karbon14_EN.pdf')
         .expect(200, done)
     })
   })
