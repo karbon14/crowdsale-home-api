@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/karbon14/home-api#readme",
   "dependencies": {
-    "@karbon14/whitepaper": "1.5.6",
+    "@karbon14/whitepaper": "1.6.1",
     "bunyan": "1.8.12",
     "joi": "13.7.0",
     "koa": "2.5.1",
@@ -61,12 +61,12 @@
     "babel-core": "7.0.0-bridge.0",
     "codecov": "3.1.0",
     "eslint": "5.0.1",
-    "husky": "1.0.0",
+    "husky": "1.2.1",
     "eslint-plugin-prettier": "2.7.0",
     "jest": "23.2.0",
     "lint-staged": "7.3.0",
     "prettier": "1.14.3",
-    "nodemon": "1.18.8",
+    "nodemon": "1.18.9",
     "supertest": "3.1.0"
   }
 }
