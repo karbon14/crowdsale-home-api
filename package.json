@@ -65,7 +65,7 @@
     "eslint-plugin-prettier": "2.7.0",
     "jest": "23.2.0",
     "lint-staged": "7.3.0",
-    "prettier": "1.14.3",
+    "prettier": "1.18.1",
     "nodemon": "1.18.9",
     "supertest": "3.1.0"
   }
