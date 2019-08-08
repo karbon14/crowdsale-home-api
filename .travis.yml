@@ -3,18 +3,14 @@ sudo: required
 services:
   - docker
 before_install:
-  - npm install -g greenkeeper-lockfile@1
   - npm install -g codecov
 before_script:
-  - greenkeeper-lockfile-update
   - make dev-daemon
 script:
   - make ci
   - zip -r dist package.json package-lock.json appspec.yml docker scripts src makefile .babelrc dist
   - mkdir -p build-upload
   - mv dist.zip build-upload/dist.zip
-after_script:
-  - greenkeeper-lockfile-upload
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
