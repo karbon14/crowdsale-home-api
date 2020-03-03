@@ -1,0 +1,40 @@
+service: crowdsale-home-api
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+
+functions:
+  app:
+    handler: dist/index.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+    environment:
+      SENDGRID_API_KEY: ${self:custom.sendgrid_apy_key.${self:provider.stage}}
+      EMAIL_CONTACT_TO: ${self:custom.EMAIL_CONTACT_TO.${self:provider.stage}}
+      MAILCHIMP_API_KEY: ${self:custom.mailchimp_api_key.${self:provider.stage}}
+      MAILCHIMP_LIST_ID: ${self:custom.MAILCHIMP_LIST_ID.${self:provider.stage}}
+
+custom:
+  stages:
+    - dev
+    - prod
+  sendgrid_apy_key:
+    dev: sendrigTest
+    prod: ${ssm:SENDGRID_API_KEY}
+  EMAIL_CONTACT_TO:
+    dev: emailContactToTest
+    prod: ${ssm:EMAIL_CONTACT_TO}
+  mailchimp_api_key:
+    dev: mailchimpApiKeyTest
+    prod: ${ssm:MAILCHIMP_API_KEY}
+  MAILCHIMP_LIST_ID:
+    dev: mailchimpListIdTest
+    prod: ${ssm:MAILCHIMP_LIST_ID}
+
+plugins:
+  - serverless-stage-manager
+  - serverless-offline
