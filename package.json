@@ -64,7 +64,7 @@
     "husky": "1.2.1",
     "eslint-plugin-prettier": "2.7.0",
     "jest": "23.2.0",
-    "lint-staged": "7.3.0",
+    "lint-staged": "8.1.4",
     "prettier": "1.14.3",
     "nodemon": "1.18.9",
     "supertest": "3.1.0"
